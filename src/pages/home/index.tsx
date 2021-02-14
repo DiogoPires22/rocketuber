@@ -5,13 +5,13 @@ import LocationContext from '../../contexts/location';
 import { Container, Map } from './styles';
 
 const HomePage: React.FC = () => {
-    const { region, destination, selectDestination } = useContext(
+    const { base, destination, selectDestination } = useContext(
         LocationContext,
     );
 
     return (
         <Container>
-            <Map initialConfig={region} destination={destination} />
+            <Map base={base} destination={destination} />
             <LocationSearchInput onSelected={selectDestination} />
         </Container>
     );

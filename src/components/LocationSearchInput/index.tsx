@@ -9,7 +9,7 @@ import {
 import Config from 'react-native-config';
 
 interface LocationSearchInputProps {
-    onSelected: (lat: number, long: number) => void;
+    onSelected: (title: string, lat: number, long: number) => void;
 }
 
 const LocationSearchInput: React.FC<LocationSearchInputProps> = ({
@@ -21,6 +21,7 @@ const LocationSearchInput: React.FC<LocationSearchInputProps> = ({
     ) => {
         if (detail) {
             onSelected(
+                detail.formatted_address,
                 detail.geometry.location.lat,
                 detail.geometry.location.lng,
             );
